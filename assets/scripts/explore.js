@@ -43,10 +43,11 @@ function init() {
       }
     }
     synth.speak(utterance);
-    if (synth.speaking == true) {
-      image.setAttribute('src', 'assets/images/smiling-open.png');
-    }
   });
+
+  utterance.addEventListener('start', () => {
+    image.setAttribute('src', 'assets/images/smiling-open.png');
+  })
 
   utterance.addEventListener('end', () => {
     image.setAttribute('src', 'assets/images/smiling.png');
